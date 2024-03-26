@@ -1,3 +1,6 @@
+
+// Class
+
 package com.example;
 
 public class Manusia {

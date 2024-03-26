@@ -10,24 +10,30 @@ import java.util.Scanner;
 public class Praktikum1_no2 {
 
     public static void main(String[] args) {
-       
+
+        // Deklarasi variabel
+        String nama;
+        String NIM;
+        String prodi;
+        String alamat;
+
         // Membuat objek Scanner untuk membaca input dari pengguna
         Scanner pemasok = new Scanner(System.in);
 
         // Contoh membaca input string dari pengguna
         System.out.print("Masukkan nama anda: ");
-        String nama = pemasok.nextLine();
+        nama = pemasok.nextLine();
         
         System.out.print("Masukkan NIM anda: ");
-        String NIM = pemasok.nextLine();
+        NIM = pemasok.nextLine();
         
         // pemasok.nextLine();
         
         System.out.print("Masukkan prodi anda: ");
-        String prodi = pemasok.nextLine();
+        prodi = pemasok.nextLine();
         
         System.out.print("Masukkan alamat anda: ");
-        String alamat = pemasok.nextLine();
+        alamat = pemasok.nextLine();
         System.out.println();
         
         // Output input yang diterima dari pengguna
@@ -38,8 +44,8 @@ public class Praktikum1_no2 {
         System.out.println("Alamat anda adalah: "+ alamat);
         System.out.println();
     }
-
 }
+
 
 //     public static void main(String[] args): Ini adalah metode utama (main method) yang merupakan titik awal eksekusi setiap aplikasi Java.
 // Scanner pemasok = new Scanner(System.in);: Membuat objek Scanner baru dengan nama pemasok. Objek ini digunakan untuk membaca input dari pengguna melalui command line.

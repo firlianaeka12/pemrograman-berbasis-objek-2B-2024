@@ -1,3 +1,6 @@
+
+// Object
+
 package com.example;
 
 public class Main {
@@ -16,12 +19,12 @@ public class Main {
         System.out.println();
         
         // Manusia manusia1 = new Manusia();
-        orang1.berjalan(90);
-        orang1.berlari(90);
+        Manusia.berjalan(90);
+        Manusia.berlari(90);
 
     }
 
-}
+}                                                                       
 
 
 

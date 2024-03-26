@@ -11,7 +11,7 @@ public class Praktikum1_no2 {
 
     public static void main(String[] args) {
 
-        // Deklarasi variabel
+        // Deklarasi variabesdfgl
         String nama;
         String NIM;
         String prodi;

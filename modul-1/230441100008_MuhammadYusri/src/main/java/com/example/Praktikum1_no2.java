@@ -55,3 +55,6 @@ public class Praktikum1_no2 {
 // System.out.println();: Mencetak baris kosong sebagai pemisah.
 // System.out.println("Nama Anda adalah: " + nama);: Menampilkan nama yang dimasukkan oleh pengguna.
 // Proses yang sama diulangi untuk menampilkan NIM, prodi, dan alamat yang telah dimasukkan oleh pengguna.
+
+
+// mencoba update

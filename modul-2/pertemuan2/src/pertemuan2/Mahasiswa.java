@@ -46,7 +46,13 @@ public class Mahasiswa {
         String nim = input.nextLine();
 
 
-        System.out.print("Masukkan kode jurusan : ");
+        System.out.println("Masukkan kode jurusan : ");
+        System.out.println("41 = Teknik Informatika");
+        System.out.println("42 = Teknik Industri");
+        System.out.println("43 = Teknik Elektro");
+        System.out.println("44 = Sistem  Informasi");
+        System.out.println("48 = Teknik Mesin");
+        System.out.println("49 = Teknik Mekatronika");
         String kodejurusan = input.nextLine();
 
         String jurusan;
@@ -74,14 +80,21 @@ public class Mahasiswa {
             jurusan = "Jurusan tidak ditemukan";
             break;
         }      
-            System.out.println("Mau ngulang? :");
+
+        if (kodejurusan.equalsIgnoreCase("41") || kodejurusan.equalsIgnoreCase("42") || kodejurusan.equalsIgnoreCase("43") || kodejurusan.equalsIgnoreCase("44") || kodejurusan.equalsIgnoreCase("48") || kodejurusan.equalsIgnoreCase("49")){
+        }else {
+            System.out.println("Kodejurusan" + " "+ kodejurusan+" " + "Tidak ditemukan");
+        }
+            
+            System.out.println("Mau ngulang? (Y) :");
             masukan = input.nextLine();
             Mahasiswa mhs = new Mahasiswa(universitas,nama, nim, jurusan, kodejurusan); // ini adalah object mahasiswa
             tambah.add(mhs); // ini adalah menambahkan object mahasiswa ke array list
-            if (masukan.equalsIgnoreCase("tidak")){ // ini adalah kondisi jika inputan tidak maka akan berhenti
+            if (masukan.equalsIgnoreCase("T")){ // ini adalah kondisi jika inputan tidak maka akan berhenti
                 break;
             }
-        }
+            }
+
         // Mahasiswa mhs = new Mahasiswa(universitas,nama, nim, jurusan, kodejurusan);
         for (Mahasiswa mhsw : tambah){
         System.out.println();

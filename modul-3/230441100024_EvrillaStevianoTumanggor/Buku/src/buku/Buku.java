@@ -4,20 +4,29 @@
  */
 package buku;
 
-/**
- *
- * @author evril
- */
-public class Buku {
-    String Judul, Penulis, Publisher, Kategori;
-    int Stok, TahunTerbit;
+class Buku {
+    protected String judul;
+    protected String penulis;
+    protected String penerbit;
+    protected String kategori;
+    protected int stok;
+    protected int tahunTerbit;
 
-    public Buku(String Judul, String Penulis, String Publisher, String Kategori, int Stok, int TahunTerbit) {
-        this.Judul = Judul;
-        this.Penulis = Penulis;
-        this.Publisher = Publisher;
-        this.Kategori = Kategori;
-        this.Stok = Stok;
-        this.TahunTerbit = TahunTerbit;
+    public Buku(String judul, String penulis, String penerbit, String kategori, int stok, int tahunTerbit) {
+        this.judul = judul;
+        this.penulis = penulis;
+        this.penerbit = penerbit;
+        this.kategori = kategori;
+        this.stok = stok;
+        this.tahunTerbit = tahunTerbit;
+    }
+
+    public void tampilkanInfo() {
+        System.out.println("Judul: " + judul);
+        System.out.println("Penulis: " + penulis);
+        System.out.println("Penerbit: " + penerbit);
+        System.out.println("Kategori: " + kategori);
+        System.out.println("Stok: " + stok);
+        System.out.println("Tahun Terbit: " + tahunTerbit);
     }
 }

@@ -4,24 +4,58 @@
  */
 package buku;
 
-/**
- *
- * @author evril
- */
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Perpustakaan {
-    ArrayList<Buku> listbuku = new ArrayList<>();
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            ArrayList<Buku> daftarBuku = new ArrayList<>();
+            
+            System.out.print("Masukkan jumlah buku yang akan ditambahkan: ");
+            int jumlahBuku = scanner.nextInt();
+            scanner.nextLine(); 
+            
+            if (jumlahBuku == 0) {
+                System.out.println("Error: Jumlah buku tidak bisa 0. Tidak ada buku untuk ditambahkan.");
+                return; 
+            }
+            
+            for (int i = 0; i < jumlahBuku; i++) {
+                System.out.println("Masukkan detail untuk Buku " + (i + 1) + "");
+                System.out.print("Judul: ");
+                String judul = scanner.nextLine();
+                System.out.print("Penulis: ");
+                String penulis = scanner.nextLine();
+                System.out.print("Penerbit: ");
+                String penerbit = scanner.nextLine();
+                System.out.print("Kategori (SU/D/R/A): ");
+                String kategori = scanner.nextLine();
+                System.out.print("Stok: ");
+                int stok = scanner.nextInt();
+                System.out.print("Tahun Terbit: ");
+                int tahunTerbit = scanner.nextInt();
+                scanner.nextLine();
+                
+                Buku bukuBaru;
 
-    public void tambahbuku(Buku buku) {
-        listbuku.add(buku);
-    }
-
-    public void tampilsemuabuku() {
-        System.out.println("\nDaftar Buku");
-        System.out.printf("%-20s%-20s%-20s%-20s%-10s%-10s\n", "Judul", "Penulis", "Publisher", "Kategori", "Stok", "TahunTerbit");
-        for (Buku buku : listbuku) {
-            System.out.printf("%-20s%-20s%-20s%-20s%-10d%-10d\n", buku.Judul, buku.Penulis, buku.Publisher, buku.Kategori, buku.Stok, buku.TahunTerbit);
+                if (kategori.equalsIgnoreCase("D")) {
+                    bukuBaru = new BukuDewasa(judul, penulis, penerbit, kategori, stok, tahunTerbit);
+                } else if (kategori.equalsIgnoreCase("A") || kategori.equalsIgnoreCase("R") || kategori.equalsIgnoreCase("SU")) {
+                    bukuBaru = new BukuAnak(judul, penulis, penerbit, kategori, stok, tahunTerbit);
+                } else {
+                    System.out.println("Pilihan Kategori Tidak Valid");
+                    return;
+                }
+                
+                daftarBuku.add(bukuBaru);
+            }
+            
+            System.out.println("\nDaftar Buku:");
+            for (Buku buku : daftarBuku) {
+                buku.tampilkanInfo();
+                System.out.println(); 
+            }
         }
     }
 }

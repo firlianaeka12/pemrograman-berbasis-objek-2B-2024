@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pkg230441100071.anandaekawati.modul4;
 
-/**
- *
- * @author asus
- */
-public class Perkalian {
-    
+class Perkalian extends OperasiMatematika {
+
+    public Perkalian(double a, double b) {
+        super(a, b);
+    }
+
+    @Override
+    public double hasil() {
+        return a * b;
+    }
+
+    @Override
+    public String operasi() {
+        return "Perkalian";
+    }
 }

@@ -23,7 +23,7 @@ public class OperasiPerkalian extends OperasiBilanganAbs {
         return b;
     }
 
-    protected double get_C() {
+    protected double get_C() { // inii niiih tadi return a
         return c;
     }
 

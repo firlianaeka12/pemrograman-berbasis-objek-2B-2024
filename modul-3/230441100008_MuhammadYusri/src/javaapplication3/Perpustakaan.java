@@ -21,7 +21,7 @@ import java.util.Scanner;
         System.out.print("Masukkan jumlah buku yang akan dientrikan: ");
         int jumlahBuku = scanner.nextInt();
         scanner.nextLine();
-    
+             
         for (int i = 0; i < jumlahBuku; i++) {
             System.out.println("\nMasukkan data buku ke-" + (i + 1) + ":");
             System.out.print("Judul: ");
@@ -30,25 +30,38 @@ import java.util.Scanner;
             String penulis = scanner.nextLine();
             System.out.print("Penerbit: ");
             String penerbit = scanner.nextLine();
-            System.out.print("Kategori (SU/D/R/A): ");
-            String kategori = scanner.nextLine().toUpperCase();
-            switch (kategori.toUpperCase()) {
-                case "SU":
-                    kategori = "Semua Umur";
-                    break;
-                case "D":
-                    kategori = "Dewasa";
-                    break;
-                case "R":
-                    kategori = "Remaja";
-                    break;
-                case "A":
-                    kategori = "Anak-anak";
-                    break;
-                default:
-                    System.out.println("Kategori tidak valid. Masukkan SU, D, R, atau A.");
-                    break;
+
+            boolean kategoriBuku = false;
+            String kategori = "";
+            
+            while (!kategoriBuku) {
+                System.out.print("Kategori (SU/D/R/A): ");
+                kategori = scanner.nextLine().toUpperCase();
+            
+                switch (kategori) {
+                    case "SU":
+                        kategori = "Semua Umur";
+                        kategoriBuku = true;
+                        break;
+                    case "D":
+                        kategori = "Dewasa";
+                        kategoriBuku = true;
+                        break;
+                    case "R":
+                        kategori = "Remaja";
+                        kategoriBuku = true;
+                        break;
+                    case "A":
+                        kategori = "Anak-anak";
+                        kategoriBuku = true;
+                        break;
+                    default:
+                        System.out.println("Kategori tidak valid. Masukkan SU, D, R, atau A.");
+                        kategoriBuku = false;
+                }
             }
+
+            
             System.out.print("Stok: ");
             int stok = scanner.nextInt();
             System.out.print("Tahun Terbit: ");
@@ -61,15 +74,19 @@ import java.util.Scanner;
     }
             
     public void viewDaftarBuku() {
-        System.out.println("\nDaftar Buku:");
-        for (Buku buku : daftarBuku) {
-            System.out.println("Judul: " + buku.getJudul());
-            System.out.println("Penulis: " + buku.getPenulis());
-            System.out.println("Penerbit: " + buku.getPenerbit());
-            System.out.println("Kategori: " + buku.getKategori());
-            System.out.println("Stok: " + buku.getStok());
-            System.out.println("Tahun Terbit: " + buku.getTahunTerbit());
-            System.out.println();
+        if (daftarBuku.isEmpty()) {
+            System.out.println("Tidak ada buku di dalam daftar.");
+        } else {
+            System.out.println("\nDaftar Buku:");
+            for (Buku buku : daftarBuku) {
+                System.out.println("Judul: " + buku.getJudul());
+                System.out.println("Penulis: " + buku.getPenulis());
+                System.out.println("Penerbit: " + buku.getPenerbit());
+                System.out.println("Kategori: " + buku.getKategori());
+                System.out.println("Stok: " + buku.getStok());
+                System.out.println("Tahun Terbit: " + buku.getTahunTerbit());
+                System.out.println();
+            }
         }
     }
 }

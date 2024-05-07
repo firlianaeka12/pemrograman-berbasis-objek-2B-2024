@@ -29,6 +29,5 @@ final class OperasiBilanganAbsCetak {
         Cetak.CetakAjaBang(operasi, a, b);
         System.out.println();
 
-        System.out.println(a-b); // hasilnya adalah 8.0 karena a - b = 9.25 - 1.25 = 8.0
     }
 }

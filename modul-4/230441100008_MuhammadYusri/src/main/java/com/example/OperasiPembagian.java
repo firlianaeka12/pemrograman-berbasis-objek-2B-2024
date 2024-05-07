@@ -3,8 +3,8 @@ package com.example;
 class OperasiPembagian extends OperasiBilanganAbs {
     protected double a, b, c;
 
-    protected void set_A(double a) {
-        this.a = a;
+    protected void set_A(double a) { //ini juga tadinya b juga sangaddd mengecoh sekaliiiiiiii aaaaaaaaa
+        this.a = a; // ini juga niih  tadinya b
     }
 
     protected void set_B(double b) {
@@ -14,7 +14,7 @@ class OperasiPembagian extends OperasiBilanganAbs {
     protected void set_C() {
         if (b == 0) {
             System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
-            c = Double.NaN;
+            c = Double.NaN; // NaN adalah 
         } else {
             c = a / b;
         }

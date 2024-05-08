@@ -6,7 +6,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan jumlah bangun datar: ");
         int jumlahBangunDatar = scanner.nextInt();
-        BangunDatar[] bangunDatarhasil = new BangunDatar[jumlahBangunDatar]; // ini adalah array yang berisi objek BangunDatar
+        BangunDatar[] bangunDatarhasil = new BangunDatar[jumlahBangunDatar];
+        // ini adalah array yang berisi objek BangunDatar, jumlahBangundatar berfungsi untuk menentukan panjang jumlah yg akan dihitung
         
         for (int i = 0; i < jumlahBangunDatar; i++) {
             System.out.println("Bangun datar ke-" + (i+1));
